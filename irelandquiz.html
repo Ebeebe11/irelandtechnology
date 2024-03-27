@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz about Ireland and Technology</title>
+</head>
+<body>
+    <h1>Quiz about Ireland and Technology</h1>
+    <p>Read the <a href="https://glandore.co/5-ways-in-which-ireland-has-adapted-to-change-within-todays-technology/" target="_blank">article</a> below and answer the following questions:</p>
+    <p>Ireland used to stick to traditions and play it safe, but now we're leading the way in innovation. Young people are bringing new ideas, like tech start-ups such as Stripe and designers like Chupi, putting Ireland in the spotlight.</p>
+    <p>Workplaces in Ireland are becoming more diverse, which helps us work better together and achieve more. This includes better financial results, competing globally, making decisions based on facts, thinking creatively, and understanding different cultures.</p>
+    <p>Since the pandemic, technology has become even more important. We're having more video meetings and informative webinars. Many are moving away from traditional offices to flexible and sustainable ways of working.</p>
+    <p>Technology is also changing education, transportation, and medicine. We now have advanced education, affordable transport, and better healthcare products. Technology has made every sector better, especially in medicine, where it's saving time and lives.</p>
+    <p>New technology and management tools, like CRM and automation tools, are making life easier for businesses. They help generate reports and track goals, saving time and allowing us to focus on the important parts of our work.</p>
+    <p>The future of Ireland looks bright thanks to technology. We're at the forefront of the digital revolution, and we're excited to see where it takes us!</p>
+
+    <form id="quizForm">
+        <h2>Quiz Questions:</h2>
+        <ol>
+            <li>
+                <label for="q1">1. How has Ireland's approach to innovation changed over time?</label><br>
+                <input type="radio" id="q1a" name="q1" value="A">
+                <label for="q1a">A) It has become more conservative.</label><br>
+                <input type="radio" id="q1b" name="q1" value="B">
+                <label for="q1b">B) It has remained the same.</label><br>
+                <input type="radio" id="q1c" name="q1" value="C">
+                <label for="q1c">C) It has become more traditional.</label><br>
+                <input type="radio" id="q1d" name="q1" value="D">
+                <label for="q1d">D) It has become more progressive.</label><br>
+            </li>
+            <!-- Include other questions similarly -->
+            <li>
+                <label for="q2">2. What examples of innovative businesses are mentioned in the text?</label><br>
+                <input type="radio" id="q2a" name="q2" value="A">
+                <label for="q2a">A) Traditional retailers</label><br>
+                <input type="radio" id="q2b" name="q2" value="B">
+                <label for="q2b">B) Restaurants</label><br>
+                <input type="radio" id="q2c" name="q2" value="C">
+                <label for="q2c">C) Tech start-ups like Stripe and designers like Chupi</label><br>
+                <input type="radio" id="q2d" name="q2" value="D">
+                <label for="q2d">D) Financial institutions</label><br>
+            </li>
+            <li>
+                <label for="q3">3. What impact has diversity had on workplaces in Ireland?</label><br>
+                <input type="radio" id="q3a" name="q3" value="A">
+                <label for="q3a">A) It has led to worse financial results.</label><br>
+                <input type="radio" id="q3b" name="q3" value="B">
+                <label for="q3b">B) It has decreased global competitiveness.</label><br>
+                <input type="radio" id="q3c" name="q3" value="C">
+                <label for="q3c">C) It has improved collaboration and results.</label><br>
+                <input type="radio" id="q3d" name="q3" value="D">
+                <label for="q3d">D) It has decreased creativity.</label><br>
+            </li>
+            <li>
+                <label for="q4">4. How has technology been affected by the COVID-19 pandemic?</label><br>
+                <input type="radio" id="q4a" name="q4" value="A">
+                <label for="q4a">A) Its importance has decreased.</label><br>
+                <input type="radio" id="q4b" name="q4" value="B">
+                <label for="q4b">B) It has become less accessible.</label><br>
+                <input type="radio" id="q4c" name="q4" value="C">
+                <label for="q4c">C) It has become more important.</label><br>
+                <input type="radio" id="q4d" name="q4" value="D">
+                <label for="q4d">D) It has become less sustainable.</label><br>
+            </li>
+            <li>
+                <label for="q5">5. How have CRM and automation tools impacted businesses?</label><br>
+                <input type="radio" id="q5a" name="q5" value="A">
+                <label for="q5a">A) They have made business operations more complicated.</label><br>
+                <input type="radio" id="q5b" name="q5" value="B">
+                <label for="q5b">B) They have increased the need for manual work.</label><br>
+                <input type="radio" id="q5c" name="q5" value="C">
+                <label for="q5c">C) They have made life easier by saving time and allowing focus on important tasks.</label><br>
+                <input type="radio" id="q5d" name="q5" value="D">
+                <label for="q5d">D) They have made business reporting less efficient.</label><br>
+            </li>
+        </ol>
+        <button type="button" onclick="checkQuiz()">Submit Quiz</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function checkQuiz() {
+            // Get user's answers
+            let q1Answer = document.querySelector('input[name="q1"]:checked').value;
+            let q2Answer = document.querySelector('input[name="q2"]:checked').value;
+            let q3Answer = document.querySelector('input[name="q3"]:checked').value;
+            let q4Answer = document.querySelector('input[name="q4"]:checked').value;
+            let q5Answer = document.querySelector('input[name="q5"]:checked').value;
+
+            // Check answers
+            let correctAnswers = 0;
+
+            if (q1Answer === 'D') {
+                correctAnswers++;
+            }
+            if (q2Answer === 'C') {
+                correctAnswers++;
+            }
+            if (q3Answer === 'C') {
+                correctAnswers++;
+            }
+            if (q4Answer === 'C') {
+                correctAnswers++;
+            }
+            if (q5Answer === 'C') {
+                correctAnswers++;
+            }
+
+            // Display results
+            let resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `<h2>Quiz Results:</h2>
+                                   <p>Number of correct answers: ${correctAnswers}</p>`;
+        }
+    </script>
+</body>
+</html>
